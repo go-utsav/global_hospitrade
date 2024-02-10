@@ -12,16 +12,11 @@
 
     <!-- font icons w3 school -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-
-    <!-- font family -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lora&family=Merriweather&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <div class="container">
-        <!-- nav start-->
+    <!-- nav start-->
+    <section class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
                 <!-- Logo on the left side -->
@@ -62,125 +57,118 @@
                 </div>
             </div>
         </nav>
-        <!-- nav complete -->
+    </section>
+    <!-- nav complete -->
 
-        <!-- product display page -->
+    <!-- signup form -->
+    <section class="container mt-4 mb-4">
+        <div class="row d-flex flex-column justify-content-center align-items-center">
+            <h2>Sign Up</h2>
+            <form action="" method="" class="d-flex flex-column justify-content-between align-items-center text-left">
+                <label for="" class="text-left"> First Name :</label>
+                <input type="text" name="first_name" id="" required>
+                <span name="first_name" class="text-danger"></span>
 
-        <div class="mt-2 mb-2">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Dental Products</li>
-                </ol>
-            </nav>
+                <label for=""> Last Name :</label>
+                <input type="text" name="last_name" id="" required>
+                <span name="last_name" class="text-danger"></span>
+
+                <label for=""> Email :</label>
+                <input type="email" name="email" id=" " required>
+                <span name="input_email" class="text-danger"></span>
+
+                <label for="">Password</label>
+                <input type="password" name="" id="" required>
+                <span name="login_password" class="text-danger"></span> <br>
+
+                <input type="submit">
+            </form>
         </div>
+    </section>
 
-        <div class="mt-2 mb-2">
-            <h1>Dental Materials</h1>
-            <p>Dental consumables include products such as implants, prosthetics, braces, crowns, dental impression
-                materials, and others. They are used for the treatment of dental disorders such as tooth restoration,
-                problems associated with gingival tissues, dental impairments, dental caries, and periodontal diseases.
-            </p>
-        </div>
+    <script>
+       // Function for validating first name
+    function hg_signup_validateFirstName(firstName) {
+        return firstName.length <= 10; // Corrected condition
+    }
 
+    // Function for validating last name
+    function hg_signup_validateLastName(lastName) {
+        return lastName.length <= 10; // Corrected condition
+    }
+    
+        // Function for validating email
+        function hg_signup_validateEmail(email) {
+            // Regular expression for email validation
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+    
+        // Function for validating password
+        function hg_signup_validatePassword(password) {
+            return password.length >= 8; // Example: Password should be at least 8 characters long
+        }
+    
+        // Function to handle form submission
+        function hg_signup_handleFormSubmission(event) {
+            event.preventDefault(); // Prevent form submission
+    
+            // Selecting form inputs and error message spans
+            const firstNameInput = document.querySelector('input[name="first_name"]');
+            const lastNameInput = document.querySelector('input[name="last_name"]');
+            const emailInput = document.querySelector('input[name="email"]');
+            const passwordInput = document.querySelector('input[type="password"]');
+            const firstNameErrorMessage = document.querySelector('span[name="first_name"]');
+            const lastNameErrorMessage = document.querySelector('span[name="last_name"]');
+            const emailErrorMessage = document.querySelector('span[name="input_email"]');
+            const passwordErrorMessage = document.querySelector('span[name="login_password"]');
+    
+            if (!hg_signup_validateFirstName(firstNameInput.value)) {
+            firstNameErrorMessage.textContent = "First name must be 10 characters or less."; // Updated error message
+            return;
+        } else {
+            firstNameErrorMessage.textContent = ""; // Clear error message
+        }
 
-        <div class="container">
-            <!-- Product 1 -->
-            <div class="row align-items-center mb-4">
-                <div class="col-md-4">
-                    <img src="/images/1artboard_2_2__1_1024xb758.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col">
-                            <h5>Hospitrade DenTemp Temporary Filling Material</h5>
-                            <h6>£ 20.00</h6>
-                        </div>
-                        <div class="col d-flex flex-column justify-content-between">
-                            <button class="btn btn-primary btn-block mb-2">Quick View</button>
-                            <button class="btn btn-success btn-block">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product 2 -->
-            <div class="row align-items-center mb-4">
-                <div class="col-md-4">
-                    <img src="/images/product2.jpg" class="img-fluid" alt="">
-                </div>
-                <div class="col-md-8">
-                    <div class="row">
-                        <div class="col">
-                            <h5>Product Name 2</h5>
-                            <h6>£ 25.00</h6>
-                        </div>
-                        <div class="col d-flex flex-column justify-content-between">
-                            <button class="btn btn-primary btn-block mb-2">Quick View</button>
-                            <button class="btn btn-success btn-block">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Repeat the above code block for the remaining products -->
-            <!-- Product 3 -->
-            <!-- Product 4 -->
-            <!-- Product 5 -->
-            <!-- Product 6 -->
-            <!-- Product 7 -->
-            <!-- Product 8 -->
-            <!-- Product 9 -->
-            <!-- Product 10 -->
-        </div>
-
-        <div class="container">
-            <div class="row">
-                <!-- Product 1 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="/images/1artboard_2_2__1_1024xb758.jpg" class="card-img-top" alt="Product Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Hospitrade DenTemp Temporary Filling Material</h5>
-                            <p class="card-text">£ 20.00</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary btn-block">Quick View</button>
-                            <button class="btn btn-success btn-block">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Product 2 -->
-                <div class="col-md-4 mb-4">
-                    <div class="card h-100">
-                        <img src="/images/product2.jpg" class="card-img-top" alt="Product Image">
-                        <div class="card-body">
-                            <h5 class="card-title">Product Name 2</h5>
-                            <p class="card-text">£ 25.00</p>
-                        </div>
-                        <div class="card-footer">
-                            <button class="btn btn-primary btn-block">Quick View</button>
-                            <button class="btn btn-success btn-block">Add To Cart</button>
-                        </div>
-                    </div>
-                </div>
-                <!-- Repeat the above card for the remaining products -->
-                <!-- Product 3 -->
-                <!-- Product 4 -->
-                <!-- Product 5 -->
-                <!-- Product 6 -->
-                <!-- Product 7 -->
-                <!-- Product 8 -->
-                <!-- Product 9 -->
-                <!-- Product 10 -->
-            </div>
-        </div>
+        // Validating last name
+        if (!hg_signup_validateLastName(lastNameInput.value)) {
+            lastNameErrorMessage.textContent = "Last name must be 10 characters or less."; // Updated error message
+            return;
+        } else {
+            lastNameErrorMessage.textContent = ""; // Clear error message
+        }
+    
+            // Validating email
+            if (!hg_signup_validateEmail(emailInput.value)) {
+                emailErrorMessage.textContent = "Please enter a valid email address.";
+                return;
+            } else {
+                emailErrorMessage.textContent = ""; // Clear error message
+            }
+    
+            // Validating password
+            if (!hg_signup_validatePassword(passwordInput.value)) {
+                passwordErrorMessage.textContent = "Password must be at least 8 characters long.";
+                return;
+            } else {
+                passwordErrorMessage.textContent = ""; // Clear error message
+            }
+    
+            // If all validations pass, submit the form
+            // You can add your form submission logic here or remove this block if you want to handle form submission differently
+            event.target.submit();
+        }
+    
+        // Add event listener to the form for submission
+        document.querySelector('form').addEventListener('submit', hg_signup_handleFormSubmission);
+    </script>
+    
 
 
-
-        <!-- footer start-->
+    <!-- footer start-->
+    <section class="container">
         <div class="mt-3 mb-3">
-            <h3 class="p-2">Why Choose Hospitrade ?</h3>
+            <h3 class="p-2 hospitrade-heading-one">Why Choose Hospitrade ?</h3>
             <div class="row justify-content-center pt-2 pb-2">
                 <div class="col-sm-6 col-md-4 col-lg-3 mb-3">
                     <div class="text-center">
@@ -212,7 +200,9 @@
                 </div>
             </div>
         </div>
+    </section>
 
+    <section class="container">
         <div class="row">
             <div class="col-md-3">
                 <h5>About Hospitrade</h5>
@@ -244,8 +234,19 @@
                 </ul>
             </div>
         </div>
+    </section>
+    <section class="container">
+        <div class="row d-flex justify-content-around">
+            <div class="col">
 
-        <!-- footer ends -->
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </section>
+
+    <!-- footer ends -->
     </div>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
