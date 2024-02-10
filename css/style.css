@@ -23,3 +23,35 @@
     font-size: large; 
     color: black;
 }
+
+
+/* Custom CSS to adjust product image size */
+.product-slide img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (min-width: 768px) {
+  .product-slide img {
+      height: 150px; /* Set your desired static height here */
+  }
+}
+
+@media (min-width: 992px) {
+  .product-slide img {
+      height: 200px; /* Set your desired static height here */
+  }
+}
+
+@media (min-width: 1200px) {
+  .product-slide img {
+      height: 250px; /* Set your desired static height here */
+  }
+}
+
+body {
+  font-family: 'Lora', serif !important;
+}
+h1,h2,h3,h4,h5,h6 {
+font-family: 'Merriweather', serif !important;
+}
